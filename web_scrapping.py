@@ -33,7 +33,7 @@ def crawl_pages(url):
         #print(page, e)
         pass    
 url = "https://www.programmableweb.com/category/all/apis"
-csv_file = open('udemy.csv', 'w', encoding="utf-8", newline='')
+csv_file = open('web_scrap.csv', 'w', encoding="utf-8", newline='')
 
 csv_writer = csv.writer(csv_file)
 csv_writer.writerow(['API Name', 'API (absolute) URL', 'API Category', 'API Description'])
