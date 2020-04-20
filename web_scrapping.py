@@ -24,6 +24,7 @@ def crawl_pages(url):
         url_tag = soup.find("a", {"title": "Go to next page"})
         if url_tag.get('href'):
             url = "https://www.programmableweb.com"+url_tag.get("href")
+            page +=1
             crawl_pages(url)
         else:
             print(page, "hreif")
