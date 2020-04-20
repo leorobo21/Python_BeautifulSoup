@@ -4,7 +4,7 @@ import csv
 
 
 def crawl_pages(url):
-    page = 0
+    #page = 0
     response = requests.get(url)
     data = response.text
     soup = BeautifulSoup(data, 'lxml')
@@ -24,13 +24,13 @@ def crawl_pages(url):
         url_tag = soup.find("a", {"title": "Go to next page"})
         if url_tag.get('href'):
             url = "https://www.programmableweb.com"+url_tag.get("href")
-            page +=1
+            #page +=1
             crawl_pages(url)
         else:
-            print(page, "hreif")
+            #print(page, "hreif")
             pass
     except Exception as e:
-        print(page, e)
+        #print(page, e)
         pass    
 url = "https://www.programmableweb.com/category/all/apis"
 csv_file = open('udemy.csv', 'w', encoding="utf-8", newline='')
